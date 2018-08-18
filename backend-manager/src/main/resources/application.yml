@@ -1,0 +1,16 @@
+fdfs:
+  soTimeout: 1500
+  connectTimeout: 600
+  thumbImage:             #����ͼ���ɲ���
+    width: 150
+    height: 150
+  trackerList: 119.29.73.127:22122      #TrackerList����,֧�ֶ��
+  host: 119.29.73.127
+server:
+  port: 9090
+spring:
+  profiles:
+    active: dev
+security:
+  basic:
+    enabled: false

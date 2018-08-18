@@ -1,0 +1,60 @@
+#datasource数据库连接设置
+spring:
+  http:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+      enabled: true
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/football?useUnicode=true&characterEncoding=UTF-8
+      username: root
+      password: 2014dsl
+      driver-class-name: com.mysql.jdbc.Driver
+# 公钥
+#publickey=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIAL0ZkY6bNvPlre9sUhyh2QNZtKM6h0OwhFdjqwwF/4dsOVq8BIUs9aGJ9msaYsds4LWUbOd1MLf6m61zQLnSMCAwEAAQ==
+# 配置 connection-properties，启用加密，配置公钥。
+#spring.datasource.druid.connection-properties=config.decrypt=true;config.decrypt.key=${publickey}
+# 启动ConfigFilter
+      filter:
+        config:
+          enabled: true
+
+# WebStatFilter配置，说明请参考Druid Wiki，配置_配置WebStatFilter
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+#spring.datasource.druid.web-stat-filter.session-stat-enable=
+#spring.datasource.druid.web-stat-filter.session-stat-max-count=
+#spring.datasource.druid.web-stat-filter.principal-session-name=
+#spring.datasource.druid.web-stat-filter.principal-cookie-name=
+#spring.datasource.druid.web-stat-filter.profile-enable=
+# StatViewServlet配置，说明请参考Druid Wiki，配置_StatViewServlet配置
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: admin
+        login-password: admin
+        allow: 127.0.0.1
+  redis:
+    host: 119.29.73.127
+    database: 0
+    port: 6379
+    timeout: 432000
+  data:
+    elasticsearch:
+      cluster-nodes: 119.29.73.127:9300
+      properties:
+        path:
+          logs: ./elasticsearch/log #elasticsearch日志存储目录
+          data: ./elasticsearch/data #elasticsearch数据存储目录
+      cluster-name: elasticsearch
+    cassandra:
+      repositories:
+        enabled: true
+redis:
+  circle:
+    timeOut: 10
+    count: 5

@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/football?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: 2014dsl
+      driver-class-name: com.mysql.jdbc.Driver
+  http:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+      enabled: true
+
+#获取验证码
+code:
+  get:
+    url: https://oqbwskol.api.lncld.net/1.1/requestSmsCode
+  check:
+    url: https://oqbwskol.api.lncld.net/1.1/verifySmsCode/

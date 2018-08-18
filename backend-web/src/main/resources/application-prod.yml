@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    name: root
+    password: 2014dsl
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/football
+  redis:
+    host: 119.29.73.127
+    database: 1

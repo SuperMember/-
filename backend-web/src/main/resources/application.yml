@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: dev
+server:
+  port: 7777
+#  ssl:
+#    key-store: keystore.p12
+#    key-store-password: 123456
+#    key-store-type: PKCS12
+#    key-alias: tomcat
+
+index:
+  game: http://www.dongqiudi.com/match/fetch_new?scroll_times=0&tz=-8
+  game_detail: http://www.dongqiudi.com/match/situation/
+  game_squad: http://www.dongqiudi.com/match/lineup/
+  game_odd: http://www.dongqiudi.com/match/odd/
+  game_highlights: http://www.dongqiudi.com/match/highlights/
+  url: http://www.dongqiudi.com/
+
+#获取验证码
+code:
+  get:
+    url: https://oqbwskol.api.lncld.net/1.1/requestSmsCode
+  check:
+    url: https://oqbwskol.api.lncld.net/1.1/verifySmsCode/
+
+fdfs:
+  soTimeout: 2000
+  connectTimeout: 2000
+  thumbImage:             #缩略图生成参数
+    width: 150
+    height: 150
+  trackerList: 119.29.73.127:22122      #TrackerList参数,支持多个
+  host: 119.29.73.127
